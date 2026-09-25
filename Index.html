@@ -1,1 +1,284 @@
-Coming Soon...
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Save the Date — Open Source Systems Engineering</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    box-sizing: border-box;
+    --bg: #F4F1E6;
+    --surface: #FFFFFF;
+    --ink: #16233F;
+    --muted: #52627C;
+    --accent: #2C5C8A;
+    --line: rgba(22,35,63,0.14);
+    --line-strong: rgba(22,35,63,0.30);
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #101C33;
+      --surface: #17274A;
+      --ink: #F1EEE3;
+      --muted: #A9B8D1;
+      --accent: #D3A94B;
+      --line: rgba(241,238,227,0.16);
+      --line-strong: rgba(241,238,227,0.34);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #101C33;
+    --surface: #17274A;
+    --ink: #F1EEE3;
+    --muted: #A9B8D1;
+    --accent: #D3A94B;
+    --line: rgba(241,238,227,0.16);
+    --line-strong: rgba(241,238,227,0.34);
+  }
+  :root[data-theme="light"] {
+    --bg: #F4F1E6;
+    --surface: #FFFFFF;
+    --ink: #16233F;
+    --muted: #52627C;
+    --accent: #2C5C8A;
+    --line: rgba(22,35,63,0.14);
+    --line-strong: rgba(22,35,63,0.30);
+  }
+
+  * { box-sizing: inherit; }
+
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--ink);
+  }
+
+  body {
+    font-family: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: -1px -1px;
+  }
+
+  .mono {
+    font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+
+  .sheet {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem 5rem;
+  }
+
+  header.hero {
+    padding-bottom: 2.5rem;
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid var(--line-strong);
+  }
+
+  .frame-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin: 0 0 1.75rem;
+  }
+  .frame-tag .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex: none;
+  }
+
+  h1.title {
+    font-size: clamp(3.2rem, 9vw, 5.4rem);
+    line-height: 0.98;
+    margin: 0 0 1.6rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .headline-dates {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--line-strong);
+    border: 1px solid var(--line-strong);
+    margin: 0 0 1.8rem;
+  }
+  .headline-dates .cell {
+    background: var(--surface);
+    padding: 1.1rem 1.3rem;
+  }
+  .headline-dates .event-date {
+    font-size: clamp(1.15rem, 2.6vw, 1.5rem);
+    margin: 0 0 0.35rem;
+  }
+  .headline-dates .event-title {
+    font-size: 1rem;
+  }
+  .headline-dates .event-place {
+    margin-top: 0.15rem;
+  }
+
+  .event-name {
+    font-size: clamp(1.15rem, 2.6vw, 1.4rem);
+    color: var(--accent);
+    font-weight: 600;
+    margin: 0 0 1.6rem;
+  }
+
+  .underline-draw {
+    display: block;
+    width: min(320px, 60%);
+    height: 6px;
+    margin-bottom: 1.8rem;
+  }
+  .underline-draw path {
+    stroke: var(--accent);
+    stroke-width: 3;
+    fill: none;
+    stroke-dasharray: 340;
+    stroke-dashoffset: 340;
+    animation: draw 1.1s ease-out 0.15s forwards;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .underline-draw path { animation: none; stroke-dashoffset: 0; }
+  }
+  @keyframes draw {
+    to { stroke-dashoffset: 0; }
+  }
+
+  .lede {
+    font-size: 1.1rem;
+    color: var(--ink);
+    max-width: 62ch;
+  }
+  .lede em {
+    font-style: normal;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  section.block {
+    margin: 2.75rem 0;
+    max-width: 68ch;
+  }
+
+  .label {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin: 0 0 0.65rem;
+  }
+
+  p {
+    margin: 0 0 1rem;
+    color: var(--ink);
+  }
+  p:last-child { margin-bottom: 0; }
+
+  .callout {
+    background: var(--surface);
+    border: 1px solid var(--line-strong);
+    border-left: 4px solid var(--accent);
+    padding: 1.5rem 1.75rem;
+    border-radius: 2px;
+  }
+  .callout p { color: var(--ink); }
+
+  .event-date {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    color: var(--accent);
+    font-size: 0.95rem;
+    margin: 0 0 0.25rem;
+  }
+  .event-title {
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin: 0 0 0.2rem;
+  }
+  .event-place {
+    color: var(--muted);
+    font-size: 0.92rem;
+    margin: 0;
+  }
+
+  footer.close {
+    margin-top: 3.5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--line-strong);
+  }
+  footer.close p {
+    font-size: 1.15rem;
+    max-width: 56ch;
+  }
+
+  @media (max-width: 520px) {
+    .sheet { padding: 3rem 1.25rem 4rem; }
+    .headline-dates { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+  <main class="sheet">
+    <header class="hero">
+      <p class="frame-tag mono"><span class="dot"></span>Join us</p>
+      <h1 class="title">Save the<br>Date</h1>
+
+      <div class="headline-dates">
+        <div class="cell">
+          <p class="event-date mono">Jan 30 – Feb 2</p>
+          <p class="event-title">INCOSE IW 2027</p>
+        </div>
+        <div class="cell">
+          <p class="event-date mono">Feb 3 – 5</p>
+          <p class="event-title">OpenMBEE Workshop</p>
+          <p class="event-place">Caltech</p>
+        </div>
+      </div>
+
+      <p class="event-name">Open Source Systems Engineering</p>
+      <svg class="underline-draw" viewBox="0 0 320 6" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M2,3 L318,3" />
+      </svg>
+      <p class="lede">Open Source Systems Engineering is emerging out of the transformation of SE practice through the use of <em>language</em> — chief among them SysML and Python.</p>
+    </header>
+
+    <section class="block">
+      <p class="label">Origins</p>
+      <p>OpenMBEE emerged out of this transformation through efforts at ESO, JPL/NASA, and Boeing. The OpenMBEE workshop itself grew out of that work at the INCOSE International Workshop, held alongside the JPL MBSE Symposium.</p>
+    </section>
+
+    <section class="block">
+      <div class="callout">
+        <p class="label">Our mission</p>
+        <p>From inception, the goal of OpenMBEE has been to build a community for Open Source Systems Engineering — a companion to the INCOSE community and to the wider professional community for systems engineering.</p>
+      </div>
+    </section>
+
+    <section class="block">
+      <p class="label">This year's focus</p>
+      <p>The 2027 workshop centers on SysML v2 as a new capability for enabling Open Source Systems Engineering. Talks, demos, and modeling activities will cover successful open source endeavors built with SysML v2, its origins in open source, what next-generation SE practitioners need to know about open source, and how open source drives the strategic imperative of systems engineering.</p>
+    </section>
+
+    <footer class="close">
+      <p>Please plan to join us at INCOSE IW 2027 — and afterward for the OpenMBEE workshop at Caltech.</p>
+    </footer>
+  </main>
+</body>
+</html>
