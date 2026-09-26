@@ -94,7 +94,7 @@
     gap: 0.5em;
     font-size: 0.8rem;
     color: var(--muted);
-    margin: 0 0 1.75rem;
+    margin: 0 0 1.8rem;
   }
   .frame-tag .dot {
     width: 7px;
@@ -105,11 +105,11 @@
   }
 
   h1.title {
-    font-size: clamp(3.2rem, 9vw, 5.4rem);
-    line-height: 0.98;
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.02;
     margin: 0 0 1.6rem;
     font-weight: 700;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.01em;
   }
 
   .headline-dates {
@@ -136,10 +136,15 @@
   }
 
   .event-name {
-    font-size: clamp(1.15rem, 2.6vw, 1.4rem);
-    color: var(--accent);
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: clamp(1.4rem, 4vw, 2rem);
     font-weight: 600;
+    letter-spacing: 0.01em;
+    line-height: 1.25;
+    color: var(--accent);
     margin: 0 0 1.6rem;
+    padding-bottom: 1.6rem;
+    border-bottom: 1px solid var(--line-strong);
   }
 
   .underline-draw {
@@ -237,8 +242,9 @@
 <body>
   <main class="sheet">
     <header class="hero">
-      <p class="frame-tag mono"><span class="dot"></span>Join us</p>
+      <p class="event-name">2027 Workshop Theme: Open Source in Systems Engineering</p>
       <h1 class="title">Save the<br>Date</h1>
+      <p class="frame-tag mono"><span class="dot"></span>Join us</p>
 
       <div class="headline-dates">
         <div class="cell">
@@ -252,7 +258,6 @@
         </div>
       </div>
 
-      <p class="event-name">Open Source Systems Engineering</p>
       <svg class="underline-draw" viewBox="0 0 320 6" preserveAspectRatio="none" aria-hidden="true">
         <path d="M2,3 L318,3" />
       </svg>
