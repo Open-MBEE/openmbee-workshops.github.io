@@ -16,7 +16,7 @@
     --muted: #52627C;
     --accent: #2C5C8A;
     --line: rgba(22,35,63,0.14);
-    --line-strong: rgba(58, 79, 125, 0.3);
+    --line-strong: rgba(22,35,63,0.30);
     padding-top: env(safe-area-inset-top, 0px);
     padding-bottom: env(safe-area-inset-bottom, 0px);
   }
@@ -131,6 +131,25 @@
   .headline-dates .event-title {
     font-size: 1rem;
   }
+  .event-title a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.2em;
+  }
+  .event-title a:hover,
+  .event-title a:focus-visible {
+    color: var(--accent);
+  }
+  .event-title a .arrow {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    color: var(--accent);
+    margin-left: 0.25em;
+    text-decoration: none;
+    display: inline-block;
+  }
+
   .headline-dates .event-place {
     margin-top: 0.15rem;
   }
@@ -249,11 +268,11 @@
       <div class="headline-dates">
         <div class="cell">
           <p class="event-date mono">Jan 30 – Feb 2</p>
-          <p class="event-title">INCOSE IW 2027</p>
+          <p class="event-title"><a href="https://www.incose.org/events-education/international-workshop/" target="_blank" rel="noopener noreferrer">INCOSE IW 2027<span class="arrow" aria-hidden="true">↗</span></a></p>
         </div>
         <div class="cell">
           <p class="event-date mono">Feb 3 – 5</p>
-          <p class="event-title">OpenMBEE Workshop</p>
+          <p class="event-title"><a href="https://github.com/Open-MBEE/openmbee-workshops.github.io/wiki/OpenMBEE-Workshop-2027" target="_blank" rel="noopener noreferrer">OpenMBEE Workshop<span class="arrow" aria-hidden="true">↗</span></a></p>
           <p class="event-place">Caltech</p>
         </div>
       </div>
@@ -282,7 +301,7 @@
     </section>
 
     <footer class="close">
-      <p>Please plan to join us at INCOSE IW 2027 — and afterward for the OpenMBEE workshop at Caltech.</p>
+      <p>Please plan to join us at <a href="https://www.incose.org/events-education/international-workshop/" target="_blank" rel="noopener noreferrer" style="color:var(--accent)">INCOSE IW 2027</a> — and afterward for the <a href="https://github.com/Open-MBEE/openmbee-workshops.github.io/wiki/OpenMBEE-Workshop-2027" target="_blank" rel="noopener noreferrer" style="color:var(--accent)">OpenMBEE workshop</a> at Caltech.</p>
     </footer>
   </main>
 </body>
