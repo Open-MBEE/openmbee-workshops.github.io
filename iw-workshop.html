@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>OpenMBEE at INCOSE IW 2027</title>
+<meta name="description" content="OpenMBEE sessions at INCOSE IW 2027, January 30 – February 2, 2027 in Torrance, California.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    box-sizing: border-box;
+    --bg: #F4F1E6;
+    --surface: #FFFFFF;
+    --ink: #16233F;
+    --muted: #52627C;
+    --accent: #2C5C8A;
+    --line: rgba(22,35,63,0.14);
+    --line-strong: rgba(22,35,63,0.30);
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #101C33;
+      --surface: #17274A;
+      --ink: #F1EEE3;
+      --muted: #A9B8D1;
+      --accent: #D3A94B;
+      --line: rgba(241,238,227,0.16);
+      --line-strong: rgba(241,238,227,0.34);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #101C33;
+    --surface: #17274A;
+    --ink: #F1EEE3;
+    --muted: #A9B8D1;
+    --accent: #D3A94B;
+    --line: rgba(241,238,227,0.16);
+    --line-strong: rgba(241,238,227,0.34);
+  }
+  :root[data-theme="light"] {
+    --bg: #F4F1E6;
+    --surface: #FFFFFF;
+    --ink: #16233F;
+    --muted: #52627C;
+    --accent: #2C5C8A;
+    --line: rgba(22,35,63,0.14);
+    --line-strong: rgba(22,35,63,0.30);
+  }
+
+  * { box-sizing: inherit; }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); }
+
+  body {
+    font-family: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: -1px -1px;
+  }
+
+  a { color: var(--accent); text-underline-offset: 0.2em; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  .mono { font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace; }
+
+  .sheet { max-width: 1040px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+
+  .topnav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    font-size: 0.85rem;
+    margin-bottom: 3rem;
+  }
+  .topnav a { color: var(--muted); }
+  .topnav a:hover { color: var(--accent); }
+
+  header.hero {
+    padding-bottom: 2.25rem;
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid var(--line-strong);
+    max-width: 760px;
+  }
+
+  .logo {
+    display: block;
+    width: clamp(120px, 24vw, 168px);
+    height: auto;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background: #FFFFFF;
+    border: 1px solid var(--line-strong);
+    margin: 0 0 1.75rem;
+  }
+
+  .event-name {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: clamp(1rem, 2.6vw, 1.25rem);
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0 0 1.25rem;
+  }
+  h1.title {
+    font-size: clamp(2.25rem, 6vw, 3.5rem);
+    line-height: 1.02;
+    margin: 0 0 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  .where-when {
+    font-size: 1.1rem;
+    margin: 0;
+    color: var(--ink);
+  }
+  .where-when span { color: var(--muted); }
+
+  h2 {
+    font-size: 1.35rem;
+    line-height: 1.2;
+    margin: 0 0 1rem;
+    font-weight: 700;
+  }
+  p { margin: 0 0 1rem; }
+  p:last-child { margin-bottom: 0; }
+
+  section.block { margin: 3rem 0; }
+  .prose { max-width: 66ch; }
+
+  /* Focus areas */
+  .focus-list {
+    list-style: none;
+    margin: 1.25rem 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--line-strong);
+    border: 1px solid var(--line-strong);
+  }
+  .focus-list li {
+    background: var(--surface);
+    padding: 1.1rem 1.3rem;
+    font-size: 0.98rem;
+  }
+
+  /* Days */
+  .days {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+  }
+  .day {
+    background: var(--surface);
+    border: 1px solid var(--line-strong);
+    border-top: 4px solid var(--accent);
+    border-radius: 2px;
+    padding: 1.4rem 1.4rem 1.6rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 15rem;
+  }
+  .day-head {
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--line-strong);
+  }
+  .day-date {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    color: var(--accent);
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 0 0 0.15rem;
+  }
+  .day-name { font-weight: 700; font-size: 1.25rem; margin: 0; }
+
+  .sessions { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; }
+  .session { display: grid; grid-template-columns: 5.5rem 1fr; gap: 0.75rem; }
+  .session .time {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.82rem;
+    color: var(--muted);
+    padding-top: 0.2rem;
+  }
+  .session .what { margin: 0; font-weight: 600; }
+  .session .detail { margin: 0.15rem 0 0; font-size: 0.9rem; color: var(--muted); }
+
+  .tba {
+    margin: auto 0 0;
+    padding-top: 1rem;
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+
+  .days.four { grid-template-columns: repeat(2, 1fr); }
+  @media (max-width: 860px) { .days.four { grid-template-columns: 1fr; } }
+
+  /* Callout */
+  .callout {
+    background: var(--surface);
+    border: 1px solid var(--line-strong);
+    border-left: 4px solid var(--accent);
+    padding: 1.4rem 1.6rem;
+    border-radius: 2px;
+    max-width: 66ch;
+  }
+  .callout h2 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+
+  /* Links */
+  .links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.6rem;
+  }
+  .links li { padding-left: 1.1rem; position: relative; }
+  .links li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.62em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  footer.close {
+    margin-top: 3.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--line-strong);
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 860px) {
+    .days { grid-template-columns: 1fr; }
+    .day { min-height: 0; }
+  }
+  @media (max-width: 560px) {
+    .sheet { padding: 2.25rem 1.25rem 4rem; }
+    .focus-list { grid-template-columns: 1fr; }
+    .session { grid-template-columns: 1fr; gap: 0.1rem; }
+  }
+</style>
+</head>
+<body>
+  <main class="sheet">
+    <nav class="topnav mono" aria-label="Related pages">
+      <a href="https://openmbee.org" target="_blank" rel="noopener noreferrer">openmbee.org</a>
+      <a href="https://opensysml.org" target="_blank" rel="noopener noreferrer">opensysml.org</a>
+      <a href="https://github.com/Open-MBEE/openmbee-workshops.github.io/wiki/INCOSE-IW-2027-OpenMBEE-Workshop" target="_blank" rel="noopener noreferrer">Workshop wiki</a>
+      <a href="https://www.incose.org/events-education/international-workshop/" target="_blank" rel="noopener noreferrer">INCOSE IW 2027</a>
+      <a href="caltech-program.html">Caltech workshop program</a>
+    </nav>
+
+    <header class="hero">
+      <img class="logo" src="openmbee-2027-logo.jpg" alt="OpenMBEE 2027 Workshop logo" width="168" height="168">
+      <p class="event-name">Leveraging Open Source in Systems Engineering</p>
+      <h1 class="title">OpenMBEE at INCOSE IW 2027</h1>
+      <p class="where-when">January 30 – February 2, 2027 <span>at the Torrance Marriott Redondo Beach, Torrance, California</span></p>
+    </header>
+
+    <section class="block prose">
+      <h2>About IW</h2>
+      <p>The INCOSE International Workshop is a four-day gathering where systems engineers work together in sessions. Unlike INCOSE's annual symposium, IW has no paper, panel, or tutorial presentations, so every OpenMBEE session at IW is built around working with the group.</p>
+      <p>OpenMBEE's sessions at IW 2027 are still being planned. Check back here as the schedule is confirmed.</p>
+    </section>
+
+    <section class="block" aria-labelledby="schedule-heading">
+      <h2 id="schedule-heading">Schedule</h2>
+      <p class="prose">Days and times for OpenMBEE sessions are not set yet. Each day will fill in as sessions are confirmed.</p>
+
+      <div class="days four">
+        <article class="day">
+          <div class="day-head">
+            <p class="day-date">Jan 30</p>
+            <p class="day-name">Saturday</p>
+          </div>
+          <ul class="sessions">
+            <!--
+              To add a session, copy this block into the list:
+              <li class="session">
+                <span class="time">9:00 – 9:30</span>
+                <div>
+                  <p class="what">Session title</p>
+                  <p class="detail">Speaker, affiliation</p>
+                </div>
+              </li>
+            -->
+          </ul>
+          <p class="tba">Sessions to be announced.</p>
+        </article>
+        <article class="day">
+          <div class="day-head">
+            <p class="day-date">Jan 31</p>
+            <p class="day-name">Sunday</p>
+          </div>
+          <ul class="sessions">
+            <!--
+              To add a session, copy this block into the list:
+              <li class="session">
+                <span class="time">9:00 – 9:30</span>
+                <div>
+                  <p class="what">Session title</p>
+                  <p class="detail">Speaker, affiliation</p>
+                </div>
+              </li>
+            -->
+          </ul>
+          <p class="tba">Sessions to be announced.</p>
+        </article>
+        <article class="day">
+          <div class="day-head">
+            <p class="day-date">Feb 1</p>
+            <p class="day-name">Monday</p>
+          </div>
+          <ul class="sessions">
+            <!--
+              To add a session, copy this block into the list:
+              <li class="session">
+                <span class="time">9:00 – 9:30</span>
+                <div>
+                  <p class="what">Session title</p>
+                  <p class="detail">Speaker, affiliation</p>
+                </div>
+              </li>
+            -->
+          </ul>
+          <p class="tba">Sessions to be announced.</p>
+        </article>
+        <article class="day">
+          <div class="day-head">
+            <p class="day-date">Feb 2</p>
+            <p class="day-name">Tuesday</p>
+          </div>
+          <ul class="sessions">
+            <!--
+              To add a session, copy this block into the list:
+              <li class="session">
+                <span class="time">9:00 – 9:30</span>
+                <div>
+                  <p class="what">Session title</p>
+                  <p class="detail">Speaker, affiliation</p>
+                </div>
+              </li>
+            -->
+          </ul>
+          <p class="tba">Sessions to be announced.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="callout">
+        <h2>Then on to Caltech</h2>
+        <p>The OpenMBEE Workshop continues February 3 – 5 at Caltech. See the <a href="caltech-program.html">Caltech workshop program</a>.</p>
+      </div>
+    </section>
+
+    <section class="block prose">
+      <h2>More information</h2>
+      <ul class="links">
+        <li><a href="https://github.com/Open-MBEE/openmbee-workshops.github.io/wiki/INCOSE-IW-2027-OpenMBEE-Workshop" target="_blank" rel="noopener noreferrer">INCOSE IW 2027 OpenMBEE Workshop on the workshop wiki</a></li>
+        <li><a href="https://www.incose.org/events-education/international-workshop/" target="_blank" rel="noopener noreferrer">INCOSE International Workshop</a></li>
+        <li><a href="caltech-program.html">OpenMBEE Workshop 2027 at Caltech</a></li>
+      </ul>
+    </section>
+
+    <footer class="close">
+      <p>OpenMBEE is a community for Open Source Systems Engineering, a companion to the INCOSE community and the wider systems engineering profession.</p>
+    </footer>
+  </main>
+</body>
+</html>
