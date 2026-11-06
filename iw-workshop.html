@@ -181,8 +181,11 @@
     margin: 0 0 0.15rem;
   }
   .day-name { font-weight: 700; font-size: 1.25rem; margin: 0; }
+  .day-start { font-family: "IBM Plex Mono", ui-monospace, monospace; color: var(--accent); font-size: 0.82rem; font-weight: 600; margin: 0.35rem 0 0; }
+  .day-summary { margin: 0; color: var(--muted); font-size: 0.95rem; }
 
   .sessions { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; }
+  .sessions[hidden] { display: none; }
   .session { display: grid; grid-template-columns: 5.5rem 1fr; gap: 0.75rem; }
   .session .time {
     font-family: "IBM Plex Mono", ui-monospace, monospace;
@@ -199,6 +202,7 @@
     color: var(--muted);
     font-size: 0.95rem;
   }
+  .day-link { display: inline-block; margin-top: 1rem; font-size: 0.9rem; font-weight: 600; }
 
   .days.four { grid-template-columns: repeat(2, 1fr); }
   @media (max-width: 860px) { .days.four { grid-template-columns: 1fr; } }
@@ -278,15 +282,17 @@
 
     <section class="block" aria-labelledby="schedule-heading">
       <h2 id="schedule-heading">Schedule</h2>
-      <p class="prose">Days and times for OpenMBEE sessions are not set yet. Each day will fill in as sessions are confirmed.</p>
+      <p class="prose">The draft program lists OpenMBEE sessions on Saturday and Monday. For evolving technical-session details, demos, and talks, follow the workshop wiki links in each tile.</p>
 
       <div class="days four">
         <article class="day">
           <div class="day-head">
             <p class="day-date">Jan 30</p>
             <p class="day-name">Saturday</p>
+            <p class="day-start">Starts 1:00 PM</p>
           </div>
-          <ul class="sessions">
+          <p class="day-summary">Welcome, keynote to be announced, technical sessions, and networking.</p>
+          <ul class="sessions" hidden>
             <!--
               To add a session, copy this block into the list:
               <li class="session">
@@ -297,15 +303,19 @@
                 </div>
               </li>
             -->
+            <li class="session"><span class="time">1:00 PM</span><div><p class="what">Welcome</p><p class="detail">OpenMBEE at INCOSE IW</p></div></li>
+            <li class="session"><span class="time">1:15 PM</span><div><p class="what">Keynote</p><p class="detail">Speaker to be announced</p></div></li>
           </ul>
-          <p class="tba">Sessions to be announced.</p>
+          <p class="tba">Opening program, technical sessions, and networking.</p>
+          <a class="day-link" href="https://github.com/Open-MBEE/openmbee-workshops.github.io/wiki/INCOSE-IW-2027-OpenMBEE-Workshop" target="_blank" rel="noopener noreferrer">View the full agenda on the wiki →</a>
         </article>
         <article class="day">
           <div class="day-head">
             <p class="day-date">Jan 31</p>
             <p class="day-name">Sunday</p>
           </div>
-          <ul class="sessions">
+          <p class="day-summary">No OpenMBEE sessions are currently listed for this day.</p>
+          <ul class="sessions" hidden>
             <!--
               To add a session, copy this block into the list:
               <li class="session">
@@ -317,14 +327,17 @@
               </li>
             -->
           </ul>
-          <p class="tba">Sessions to be announced.</p>
+          <p class="tba">Check back for program updates.</p>
+          <a class="day-link" href="https://github.com/Open-MBEE/openmbee-workshops.github.io/wiki/INCOSE-IW-2027-OpenMBEE-Workshop" target="_blank" rel="noopener noreferrer">View the full agenda on the wiki →</a>
         </article>
         <article class="day">
           <div class="day-head">
             <p class="day-date">Feb 1</p>
             <p class="day-name">Monday</p>
+            <p class="day-start">Starts 1:00 PM</p>
           </div>
-          <ul class="sessions">
+          <p class="day-summary">Welcome, keynote to be announced, technical sessions, and networking.</p>
+          <ul class="sessions" hidden>
             <!--
               To add a session, copy this block into the list:
               <li class="session">
@@ -335,15 +348,19 @@
                 </div>
               </li>
             -->
+            <li class="session"><span class="time">1:00 PM</span><div><p class="what">Welcome</p><p class="detail">OpenMBEE at INCOSE IW</p></div></li>
+            <li class="session"><span class="time">1:15 PM</span><div><p class="what">Keynote</p><p class="detail">Speaker to be announced</p></div></li>
           </ul>
-          <p class="tba">Sessions to be announced.</p>
+          <p class="tba">Technical-session details to be announced.</p>
+          <a class="day-link" href="https://github.com/Open-MBEE/openmbee-workshops.github.io/wiki/INCOSE-IW-2027-OpenMBEE-Workshop" target="_blank" rel="noopener noreferrer">View the full agenda on the wiki →</a>
         </article>
         <article class="day">
           <div class="day-head">
             <p class="day-date">Feb 2</p>
             <p class="day-name">Tuesday</p>
           </div>
-          <ul class="sessions">
+          <p class="day-summary">No OpenMBEE sessions are currently listed for this day.</p>
+          <ul class="sessions" hidden>
             <!--
               To add a session, copy this block into the list:
               <li class="session">
@@ -355,7 +372,8 @@
               </li>
             -->
           </ul>
-          <p class="tba">Sessions to be announced.</p>
+          <p class="tba">Check back for program updates.</p>
+          <a class="day-link" href="https://github.com/Open-MBEE/openmbee-workshops.github.io/wiki/INCOSE-IW-2027-OpenMBEE-Workshop" target="_blank" rel="noopener noreferrer">View the full agenda on the wiki →</a>
         </article>
       </div>
     </section>
