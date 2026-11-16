@@ -1,0 +1,18 @@
+Use case: ads-marketing. Create a polished, finished single-page portrait announcement flyer PNG for LinkedIn, approximately 4:5 aspect ratio, high resolution. Use the supplied OpenMBEE 2027 circular logo as a supporting brand image, preserving its appearance. Design: crisp professional editorial typography, warm cream background #F4F1E6, deep navy #16233F typography, blue #2C5C8A accents, fine engineering grid and sparse connected system nodes as subtle decoration. Generous margins, extremely readable text, coherent hierarchy, no photos, no fake QR codes, no additional logos. The flyer should feel like an established technical community conference announcement. Use two distinct event panels and a compact keynote strip. Make main title bold and large, dates prominent, bottom website clearly legible. Include only this exact text, with sensible line breaks:
+"OpenMBEE 2027"
+"Leveraging Open Source in Systems Engineering"
+"Join the open source systems engineering community"
+"INCOSE IW 2027"
+"JAN 30 – FEB 2, 2027"
+"Torrance, California"
+"OpenMBEE Workshop at CALTECH"
+"FEB 3 – 5, 2027"
+"Pasadena, California"
+"FEATURED KEYNOTES"
+"Nicholas LeGrand · Feb 3 reception"
+"Ed Seidewitz · Feb 4"
+"Adam Wade · Feb 5"
+"SysML v2 • Talks & demos • Community modeling • Hackathon"
+"Register for IW, the Caltech workshop & reception"
+"workshops.openmbee.org"
+Do not invent claims about price, sponsors, deadlines or attendance. Text must be accurately spelled and comfortably readable at phone size. The reception is associated with the Caltech workshop; do not imply its venue is the Caltech campus.
