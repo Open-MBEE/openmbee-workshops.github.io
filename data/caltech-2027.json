@@ -1,0 +1,382 @@
+{
+  "id": "caltech-2027",
+  "title": "OpenMBEE Workshop at Caltech",
+  "theme": "Leveraging Open Source in Systems Engineering",
+  "timezone": "America/Los_Angeles",
+  "startDate": "2027-02-03",
+  "endDate": "2027-02-05",
+  "sources": {
+    "program": "https://workshops.openmbee.org/caltech-program.html",
+    "planning": "https://github.com/Open-MBEE/openmbee-workshops.github.io/wiki/OpenMBEE-Workshop-2027",
+    "checked": "2026-11-17"
+  },
+  "registrationOptions": [
+    {
+      "id": "workshop",
+      "title": "Caltech workshop",
+      "dates": "February 4–5",
+      "description": "Talks, demos, modeling activities, and community sessions at Caltech.",
+      "url": "https://forms.gle/PBHnLteSZcqWZSSEA",
+      "status": "open",
+      "relationship": "Reception registration is separate."
+    },
+    {
+      "id": "reception",
+      "title": "JPL opening reception",
+      "dates": "February 3",
+      "description": "An evening reception and opening keynote at JPL. Advance visitor checking is required.",
+      "url": "https://forms.gle/hupXadCrkBWYFYsJ6",
+      "status": "open",
+      "relationship": "Complete this separate form if you plan to attend the reception."
+    }
+  ],
+  "venues": {
+    "caltech": {
+      "name": "Caltech",
+      "city": "Pasadena, California"
+    },
+    "jpl": {
+      "name": "JPL",
+      "city": "California"
+    }
+  },
+  "speakers": {
+    "legrand": {
+      "name": "Nicholas LeGrand",
+      "initials": "NL",
+      "role": "Director for Systems Engineering, Office of the Under Secretary of War for Research and Engineering",
+      "date": "February 3 · JPL"
+    },
+    "seidewitz": {
+      "name": "Ed Seidewitz",
+      "initials": "ES",
+      "role": "Model Driven Solutions · OMG SysML v2 co-lead",
+      "date": "February 4 · Caltech"
+    },
+    "wade": {
+      "name": "Adam Wade",
+      "initials": "AW",
+      "role": "Systems Engineering Technical Lead, Los Alamos National Labs",
+      "date": "February 5 · Caltech"
+    }
+  },
+  "days": [
+    {
+      "date": "2027-02-03",
+      "label": "Wednesday, February 3",
+      "short": "Wed, Feb 3",
+      "venueId": "jpl"
+    },
+    {
+      "date": "2027-02-04",
+      "label": "Thursday, February 4",
+      "short": "Thu, Feb 4",
+      "venueId": "caltech"
+    },
+    {
+      "date": "2027-02-05",
+      "label": "Friday, February 5",
+      "short": "Fri, Feb 5",
+      "venueId": "caltech"
+    }
+  ],
+  "sessions": [
+    {
+      "id": "3-1800",
+      "date": "2027-02-03",
+      "startTime": "18:00",
+      "endTime": "20:00",
+      "title": "Opening reception",
+      "type": "reception",
+      "speakerIds": [],
+      "venueId": "jpl",
+      "status": "published"
+    },
+    {
+      "id": "3-1830",
+      "date": "2027-02-03",
+      "startTime": "18:30",
+      "endTime": "19:15",
+      "title": "Opening keynote",
+      "type": "keynote",
+      "speakerIds": [
+        "legrand"
+      ],
+      "venueId": "jpl",
+      "status": "published"
+    },
+    {
+      "id": "4-0900",
+      "date": "2027-02-04",
+      "startTime": "09:00",
+      "endTime": "09:15",
+      "title": "Welcome",
+      "type": "opening",
+      "speakerIds": [],
+      "venueId": "caltech",
+      "status": "tentative"
+    },
+    {
+      "id": "4-0915",
+      "date": "2027-02-04",
+      "startTime": "09:15",
+      "endTime": "10:00",
+      "title": "The Story Behind SysML v2’s Open-Source Implementation",
+      "type": "keynote",
+      "speakerIds": [
+        "seidewitz"
+      ],
+      "venueId": "caltech",
+      "status": "published"
+    },
+    {
+      "id": "4-1000",
+      "date": "2027-02-04",
+      "startTime": "10:00",
+      "endTime": "10:40",
+      "title": "Technical session · details to be announced",
+      "type": "talk",
+      "speakerIds": [],
+      "venueId": "caltech",
+      "status": "tba"
+    },
+    {
+      "id": "4-1040",
+      "date": "2027-02-04",
+      "startTime": "10:40",
+      "endTime": "11:00",
+      "title": "Networking break",
+      "type": "break",
+      "speakerIds": [],
+      "venueId": "caltech",
+      "status": "tentative"
+    },
+    {
+      "id": "4-1100",
+      "date": "2027-02-04",
+      "startTime": "11:00",
+      "endTime": "11:40",
+      "title": "Technical session · details to be announced",
+      "type": "talk",
+      "speakerIds": [],
+      "venueId": "caltech",
+      "status": "tba"
+    },
+    {
+      "id": "4-1140",
+      "date": "2027-02-04",
+      "startTime": "11:40",
+      "endTime": "12:30",
+      "title": "Open Space & hackathon kickoff",
+      "type": "community",
+      "speakerIds": [],
+      "venueId": "caltech",
+      "status": "tentative",
+      "description": "Bring your questions and ideas into participant-led discussions and collaborative hands-on work."
+    },
+    {
+      "id": "4-1230",
+      "date": "2027-02-04",
+      "startTime": "12:30",
+      "endTime": "13:30",
+      "title": "Lunch",
+      "type": "break",
+      "speakerIds": [],
+      "venueId": "caltech",
+      "status": "tentative"
+    },
+    {
+      "id": "4-1330",
+      "date": "2027-02-04",
+      "startTime": "13:30",
+      "endTime": "14:30",
+      "title": "Open Space community activity",
+      "type": "community",
+      "speakerIds": [],
+      "venueId": "caltech",
+      "status": "tentative",
+      "description": "Participants propose topics and organize discussions around shared interests."
+    },
+    {
+      "id": "4-1430",
+      "date": "2027-02-04",
+      "startTime": "14:30",
+      "endTime": "15:00",
+      "title": "Open Space outbrief",
+      "type": "community",
+      "speakerIds": [],
+      "venueId": "caltech",
+      "status": "tentative",
+      "description": "Groups share what they explored with the wider workshop."
+    },
+    {
+      "id": "4-1500",
+      "date": "2027-02-04",
+      "startTime": "15:00",
+      "endTime": "15:20",
+      "title": "Networking break",
+      "type": "break",
+      "speakerIds": [],
+      "venueId": "caltech",
+      "status": "tentative"
+    },
+    {
+      "id": "4-1520",
+      "date": "2027-02-04",
+      "startTime": "15:20",
+      "endTime": "16:00",
+      "title": "Technical session · details to be announced",
+      "type": "talk",
+      "speakerIds": [],
+      "venueId": "caltech",
+      "status": "tba"
+    },
+    {
+      "id": "4-1600",
+      "date": "2027-02-04",
+      "startTime": "16:00",
+      "endTime": "16:40",
+      "title": "Technical session · details to be announced",
+      "type": "talk",
+      "speakerIds": [],
+      "venueId": "caltech",
+      "status": "tba"
+    },
+    {
+      "id": "5-0900",
+      "date": "2027-02-05",
+      "startTime": "09:00",
+      "endTime": "09:15",
+      "title": "Welcome",
+      "type": "opening",
+      "speakerIds": [],
+      "venueId": "caltech",
+      "status": "tentative"
+    },
+    {
+      "id": "5-0915",
+      "date": "2027-02-05",
+      "startTime": "09:15",
+      "endTime": "10:00",
+      "title": "The Integrator, Not the Expert: From Oppenheimer to Digital Engineering",
+      "type": "keynote",
+      "speakerIds": [
+        "wade"
+      ],
+      "venueId": "caltech",
+      "status": "published"
+    },
+    {
+      "id": "5-1000",
+      "date": "2027-02-05",
+      "startTime": "10:00",
+      "endTime": "10:40",
+      "title": "Technical session · details to be announced",
+      "type": "talk",
+      "speakerIds": [],
+      "venueId": "caltech",
+      "status": "tba"
+    },
+    {
+      "id": "5-1040",
+      "date": "2027-02-05",
+      "startTime": "10:40",
+      "endTime": "11:00",
+      "title": "Networking break",
+      "type": "break",
+      "speakerIds": [],
+      "venueId": "caltech",
+      "status": "tentative"
+    },
+    {
+      "id": "5-1100",
+      "date": "2027-02-05",
+      "startTime": "11:00",
+      "endTime": "11:40",
+      "title": "Technical session · details to be announced",
+      "type": "talk",
+      "speakerIds": [],
+      "venueId": "caltech",
+      "status": "tba"
+    },
+    {
+      "id": "5-1140",
+      "date": "2027-02-05",
+      "startTime": "11:40",
+      "endTime": "12:30",
+      "title": "Technical session · details to be announced",
+      "type": "talk",
+      "speakerIds": [],
+      "venueId": "caltech",
+      "status": "tba"
+    },
+    {
+      "id": "5-1230",
+      "date": "2027-02-05",
+      "startTime": "12:30",
+      "endTime": "13:30",
+      "title": "Lunch",
+      "type": "break",
+      "speakerIds": [],
+      "venueId": "caltech",
+      "status": "tentative"
+    },
+    {
+      "id": "5-1330",
+      "date": "2027-02-05",
+      "startTime": "13:30",
+      "endTime": "14:30",
+      "title": "Fishbowl community activity",
+      "type": "community",
+      "speakerIds": [],
+      "venueId": "caltech",
+      "status": "tentative",
+      "description": "An interactive discussion where participants can join the conversation as it develops."
+    },
+    {
+      "id": "5-1430",
+      "date": "2027-02-05",
+      "startTime": "14:30",
+      "endTime": "15:10",
+      "title": "Technical session · details to be announced",
+      "type": "talk",
+      "speakerIds": [],
+      "venueId": "caltech",
+      "status": "tba"
+    },
+    {
+      "id": "5-1510",
+      "date": "2027-02-05",
+      "startTime": "15:10",
+      "endTime": "15:30",
+      "title": "Networking break",
+      "type": "break",
+      "speakerIds": [],
+      "venueId": "caltech",
+      "status": "tentative"
+    },
+    {
+      "id": "5-1530",
+      "date": "2027-02-05",
+      "startTime": "15:30",
+      "endTime": "16:10",
+      "title": "Hackathon outbrief",
+      "type": "community",
+      "speakerIds": [],
+      "venueId": "caltech",
+      "status": "tentative",
+      "description": "Share outcomes from the collaborative activities."
+    },
+    {
+      "id": "5-1610",
+      "date": "2027-02-05",
+      "startTime": "16:10",
+      "endTime": "16:30",
+      "title": "Wrap-up",
+      "type": "closing",
+      "speakerIds": [],
+      "venueId": "caltech",
+      "status": "tentative"
+    }
+  ]
+}
