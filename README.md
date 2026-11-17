@@ -25,7 +25,3 @@ Confirm fees, deadlines, JPL access requirements, whether separate INCOSE regist
 After editing event data or the template, run `python3 scripts/render_event.py` and commit the generated HTML with its sources. `published` means a session appears in the public program, not that its detailed timing is confirmed; `tentative` timings and `tba` slots come from the draft wiki. Keep source URLs and the checked date current. All three days are visible without JavaScript; day buttons enhance the existing day anchor links.
 
 Run `python3 scripts/render_event.py --check`, `node --test tests/event.test.cjs`, and `git diff --check`. Also check local links, keyboard navigation, zoom, contrast, and desktop and mobile layouts before publishing. Automated logic checks do not establish WCAG conformance. `CNAME` contains the existing custom domain; retain it when publishing through the repository's GitHub Pages setup.
-
-## Design reference
-
-The copy and presentation polish was informed by [Unslop](https://github.com/heydamir/unslop), by Damir Sokolovsky, licensed CC BY 4.0. The OpenMBEE brand assets and fonts are retained.
