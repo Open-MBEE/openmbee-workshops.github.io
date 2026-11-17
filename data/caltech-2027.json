@@ -36,7 +36,7 @@
       "city": "Pasadena, California"
     },
     "jpl": {
-      "name": "JPL",
+      "name": "JPL Van Karman",
       "city": "California"
     }
   },
@@ -375,5 +375,11 @@
       "venueId": "caltech",
       "status": "tentative"
     }
+  ],
+  "focusAreas": [
+    "Successful open source endeavors built with SysML v2",
+    "SysML v2's origins in open source",
+    "What next-generation SE practitioners need to know about open source",
+    "How open source drives the strategic imperative of systems engineering"
   ]
 }
