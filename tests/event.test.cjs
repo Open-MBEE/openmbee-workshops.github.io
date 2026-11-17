@@ -8,11 +8,12 @@ function setup(hash = '') {
   const buttons = [...days.map(d => ({ dataset: { day: d.id }, textContent: d.id })), { dataset: { day: 'all' }, textContent: 'All days' }];
   buttons.forEach(b => { b.setAttribute = (k, v) => { b[k] = v; }; b.addEventListener = (_, fn) => { b.click = fn; }; });
   const announcement = {};
+  const dayLinks = { hidden: false };
   const controls = { hidden: true, querySelectorAll: () => buttons };
   const window = { location: { hash }, addEventListener: (_, fn) => { window.hashchange = fn; } };
-  const document = { getElementById: id => id === 'agenda-controls' ? controls : id === 'agenda-announcement' ? announcement : days.find(d => d.id === id), querySelectorAll: () => days };
+  const document = { getElementById: id => id === 'agenda-controls' ? controls : id === 'agenda-announcement' ? announcement : id === 'agenda-day-links' ? dayLinks : days.find(d => d.id === id), querySelectorAll: () => days };
   vm.runInNewContext(fs.readFileSync(path.join(__dirname, '../event.js'), 'utf8'), { document, window });
-  return { days, buttons, announcement, window, controls };
+  return { days, buttons, announcement, window, controls, dayLinks };
 }
 test('starts with all days visible and exposes native day buttons', () => {
   const { days, controls, buttons } = setup();
@@ -36,4 +37,10 @@ test('deep links and hash navigation reveal and scroll to the requested day', ()
   window.location.hash = '#day-2027-02-03';
   window.hashchange();
   assert.deepEqual(days.map(d => d.hidden), [false, true, true]);
+});
+
+test('enhancement replaces fallback day links with a single day control group', () => {
+  const { controls, dayLinks } = setup();
+  assert.equal(controls.hidden, false);
+  assert.equal(dayLinks.hidden, true);
 });

@@ -14,6 +14,8 @@
     }
   }
   controls.hidden = false;
+  const dayLinks = document.getElementById('agenda-day-links');
+  if (dayLinks) dayLinks.hidden = true;
   buttons.forEach(button => button.addEventListener('click', () => select(button.dataset.day, true)));
   function followHash() {
     const id = window.location.hash.slice(1);

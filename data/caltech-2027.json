@@ -43,19 +43,16 @@
   "speakers": {
     "legrand": {
       "name": "Nicholas LeGrand",
-      "initials": "NL",
       "role": "Director for Systems Engineering, Office of the Under Secretary of War for Research and Engineering",
       "date": "February 3 · JPL"
     },
     "seidewitz": {
       "name": "Ed Seidewitz",
-      "initials": "ES",
       "role": "Model Driven Solutions · OMG SysML v2 co-lead",
       "date": "February 4 · Caltech"
     },
     "wade": {
       "name": "Adam Wade",
-      "initials": "AW",
       "role": "Systems Engineering Technical Lead, Los Alamos National Labs",
       "date": "February 5 · Caltech"
     }
