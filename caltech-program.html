@@ -294,15 +294,17 @@
     .menu { display: none; position: absolute; left: 0; right: 0; top: 100%; background: #10052F; border-bottom: 1px solid rgba(214,214,214,0.2); flex-direction: column; align-items: stretch; padding: 0.5rem 1rem 1rem; gap: 0; max-height: calc(100vh - 60px); overflow-y: auto; }
     .site-header.open .menu { display: flex; }
     .menu a, .menu .group-btn { padding: 0.85rem 0.6rem; width: 100%; }
-    .menu .group-btn { pointer-events: none; color: #C4C0D6; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; padding-bottom: 0.2rem; }
+    .menu .group-btn { color: #C4C0D6; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; padding-bottom: 0.2rem; }
     .menu .cta .group-btn { background: none; color: #64DDFA; }
     .menu .chev { display: none; }
-    .submenu, .group-btn[aria-expanded] + .submenu { display: block; position: static; background: none; border: 0; box-shadow: none; padding: 0 0 0.4rem 0.6rem; min-width: 0; }
+    .submenu, .group-btn[aria-expanded] + .submenu { display: none; position: static; background: none; border: 0; box-shadow: none; padding: 0 0 0.4rem 0.6rem; min-width: 0; }
     .menu a[aria-current="page"] { box-shadow: inset 3px 0 0 #64DDFA; border-radius: 0; }
   }
+  @media (max-width: 860px) { .menu .group-btn[aria-expanded="true"] + .submenu { display: block; } }
   .day-link { display: inline-flex; align-items: center; gap: 0.5em; margin-top: 1rem; padding: 0.75rem 1.15rem; font-size: 1rem; line-height: 1.2; background: var(--accent); color: var(--surface); border-radius: 6px; text-decoration: none; box-shadow: 0 1px 0 rgba(0,0,0,0.12); transition: filter .15s, transform .15s; }
   a.day-link:hover { filter: brightness(1.1); transform: translateY(-1px); }
   a.day-link:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+  .menu a.registration-nav { background: #64DDFA; color: #10052F; }
 </style>
 <link rel="stylesheet" href="event.css">
 </head>
@@ -318,15 +320,10 @@
         <li><a href="caltech-program.html" aria-current="page">Caltech Workshop</a></li>
         <li><a href="sponsors.html">Sponsors</a></li>
         <li><a href="https://github.com/Open-MBEE/openmbee-workshops.github.io/wiki" target="_blank" rel="noopener noreferrer">Workshop wiki</a></li>
-        <li><button class="group-btn" type="button" aria-expanded="false" aria-haspopup="true">Links <span class="chev" aria-hidden="true"></span></button>
+
+        <li class="cta"><button class="group-btn" type="button" aria-expanded="false" >Register <span class="chev" aria-hidden="true"></span></button>
           <ul class="submenu">
-            <li><a href="https://openmbee.org" target="_blank" rel="noopener noreferrer">openmbee.org</a></li>
-            <li><a href="https://opensysml.org" target="_blank" rel="noopener noreferrer">opensysml.org</a></li>
-            <li><a href="https://www.incose.org/events-education/international-workshop/" target="_blank" rel="noopener noreferrer">INCOSE International Workshop</a></li>
-          </ul></li>
-        <li class="cta"><button class="group-btn" type="button" aria-expanded="false" aria-haspopup="true">Register <span class="chev" aria-hidden="true"></span></button>
-          <ul class="submenu">
-            <li><a href="https://forms.gle/thK285cZzCgFuwCV6" target="_blank" rel="noopener noreferrer">OpenMBEE at INCOSE IW 2027<span class="note">Jan 30 – Feb 2</span></a></li>
+            <li><a href="https://forms.gle/thK285cZzCgFuwCV6" target="_blank" rel="noopener noreferrer">OpenMBEE at INCOSE IW 2027<span class="note">Sessions planned Jan 30 &amp; Feb 1 · IW runs Jan 30–Feb 2</span></a></li>
             <li><hr></li>
             <li><a href="https://forms.gle/PBHnLteSZcqWZSSEA" target="_blank" rel="noopener noreferrer">OpenMBEE Workshop at Caltech<span class="note">Feb 4 – 5</span></a></li>
             <li><a href="https://forms.gle/hupXadCrkBWYFYsJ6" target="_blank" rel="noopener noreferrer">JPL opening reception<span class="note">Feb 3 · JPL</span></a></li>
@@ -343,32 +340,7 @@
 <section class="event-section" id="attend"><h2>Registration</h2><p>Register for the Caltech workshop and, if you plan to join the opening evening, complete the separate JPL reception form.</p><div class="registration-grid"><article class="registration-option"><p class="event-kicker">February 4–5</p><h3>Caltech workshop</h3><p>Talks, demos, modeling activities, and community sessions at Caltech.</p><a class="event-button" href="https://forms.gle/PBHnLteSZcqWZSSEA" target="_blank" rel="noopener noreferrer">Register for the workshop</a><p class="event-note">Reception registration is separate.</p></article><article class="registration-option"><p class="event-kicker">February 3</p><h3>JPL opening reception</h3><p>An evening reception and opening keynote at JPL. Advance visitor checking is required.</p><a class="event-button" href="https://forms.gle/hupXadCrkBWYFYsJ6" target="_blank" rel="noopener noreferrer">Register for the JPL reception</a><p class="event-note">Complete this separate form if you plan to attend the reception.</p></article></div></section>
 <section class="event-section event-resources" id="resources"><h2>Plan your visit</h2><details><summary>Where are the activities?</summary><p>The February 4–5 workshop is at Caltech in Pasadena, California. The February 3 reception and opening keynote are at JPL. Detailed arrival, room, parking, and access information is still to be announced.</p></details><details><summary>What do I need for the JPL reception?</summary><p>Complete the separate reception registration form. Advance visitor checking is required; consult the form for the information requested. Access deadlines and detailed arrival instructions are still to be announced.</p></details><details><summary>What should I prepare?</summary><p>Participants with different levels of SysML v2 experience are welcome. Laptop, software setup, and activity prerequisites are still to be announced.</p></details><details><summary>What is still being finalized?</summary><p>Technical session topics, fees, registration deadlines, attendance policies, and travel logistics need organizer confirmation. Check the program and registration forms for updates before making arrangements.</p></details><details><summary>How does this relate to INCOSE IW?</summary><p>The workshop follows INCOSE IW in Torrance. <a href="iw-workshop.html">Explore the OpenMBEE IW sessions</a>. Whether separate INCOSE registration is required, and policies for attending the Caltech workshop or reception independently, need organizer confirmation.</p></details><ul class="resource-links"><li><a href="https://github.com/Open-MBEE/openmbee-workshops.github.io/wiki/OpenMBEE-Workshop-2027">Workshop planning wiki</a></li><li><a href="https://github.com/Open-MBEE">OpenMBEE on GitHub</a></li><li><a href="https://openmbee.org">OpenMBEE community</a></li></ul></section>
 <footer class="event-footer"><a href="index.html">All OpenMBEE workshop events →</a><p>Program sources checked 2026-11-17. Schedule subject to change.</p></footer></main>
-  <script>
-    (function () {
-      var header = document.querySelector('.site-header');
-      var toggle = header.querySelector('.nav-toggle');
-      var groups = header.querySelectorAll('.group-btn');
-      function closeGroups(except) {
-        groups.forEach(function (b) { if (b !== except) b.setAttribute('aria-expanded', 'false'); });
-      }
-      toggle.addEventListener('click', function () {
-        var open = header.classList.toggle('open');
-        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
-      groups.forEach(function (b) {
-        b.addEventListener('click', function (e) {
-          e.stopPropagation();
-          var open = b.getAttribute('aria-expanded') === 'true';
-          closeGroups(b);
-          b.setAttribute('aria-expanded', open ? 'false' : 'true');
-        });
-      });
-      document.addEventListener('click', function () { closeGroups(); });
-      document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') { closeGroups(); header.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); }
-      });
-    })();
-  </script>
+  <script src="navigation.js" defer></script>
 <script src="event.js" defer></script>
 </body>
 </html>

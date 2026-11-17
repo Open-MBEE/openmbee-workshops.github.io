@@ -291,10 +291,10 @@
     .menu { display: none; position: absolute; left: 0; right: 0; top: 100%; background: #10052F; border-bottom: 1px solid rgba(214,214,214,0.2); flex-direction: column; align-items: stretch; padding: 0.5rem 1rem 1rem; gap: 0; max-height: calc(100vh - 60px); overflow-y: auto; }
     .site-header.open .menu { display: flex; }
     .menu a, .menu .group-btn { padding: 0.85rem 0.6rem; width: 100%; }
-    .menu .group-btn { pointer-events: none; color: #C4C0D6; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; padding-bottom: 0.2rem; }
+    .menu .group-btn { color: #C4C0D6; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; padding-bottom: 0.2rem; }
     .menu .cta .group-btn { background: none; color: #64DDFA; }
     .menu .chev { display: none; }
-    .submenu, .group-btn[aria-expanded] + .submenu { display: block; position: static; background: none; border: 0; box-shadow: none; padding: 0 0 0.4rem 0.6rem; min-width: 0; }
+    .submenu, .group-btn[aria-expanded] + .submenu { display: none; position: static; background: none; border: 0; box-shadow: none; padding: 0 0 0.4rem 0.6rem; min-width: 0; }
     .menu a[aria-current="page"] { box-shadow: inset 3px 0 0 #64DDFA; border-radius: 0; }
   }
   .sponsors { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line-strong); border: 1px solid var(--line-strong); }
@@ -305,9 +305,11 @@
   .sponsor-wide { grid-column: 1 / -1; }
   .sponsor-note { margin: 0.6rem 0 0; color: var(--muted); }
   @media (max-width: 560px) { .sponsors { grid-template-columns: 1fr; } }
+  @media (max-width: 860px) { .menu .group-btn[aria-expanded="true"] + .submenu { display: block; } }
   .day-link { display: inline-flex; align-items: center; gap: 0.5em; margin-top: 1rem; padding: 0.75rem 1.15rem; font-size: 1rem; line-height: 1.2; background: var(--accent); color: var(--surface); border-radius: 6px; text-decoration: none; box-shadow: 0 1px 0 rgba(0,0,0,0.12); transition: filter .15s, transform .15s; }
   a.day-link:hover { filter: brightness(1.1); transform: translateY(-1px); }
   a.day-link:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+  .menu a.registration-nav { background: #64DDFA; color: #10052F; }
 </style>
 <link rel="stylesheet" href="proposal.css">
 </head>
@@ -322,15 +324,10 @@
         <li><a href="caltech-program.html">Caltech Workshop</a></li>
         <li><a href="sponsors.html" aria-current="page">Sponsors</a></li>
         <li><a href="https://github.com/Open-MBEE/openmbee-workshops.github.io/wiki" target="_blank" rel="noopener noreferrer">Workshop wiki</a></li>
-        <li><button class="group-btn" type="button" aria-expanded="false" aria-haspopup="true">Links <span class="chev" aria-hidden="true"></span></button>
+
+        <li class="cta"><button class="group-btn" type="button" aria-expanded="false" >Register <span class="chev" aria-hidden="true"></span></button>
           <ul class="submenu">
-            <li><a href="https://openmbee.org" target="_blank" rel="noopener noreferrer">openmbee.org</a></li>
-            <li><a href="https://opensysml.org" target="_blank" rel="noopener noreferrer">opensysml.org</a></li>
-            <li><a href="https://www.incose.org/events-education/international-workshop/" target="_blank" rel="noopener noreferrer">INCOSE International Workshop</a></li>
-          </ul></li>
-        <li class="cta"><button class="group-btn" type="button" aria-expanded="false" aria-haspopup="true">Register <span class="chev" aria-hidden="true"></span></button>
-          <ul class="submenu">
-            <li><a href="https://forms.gle/thK285cZzCgFuwCV6" target="_blank" rel="noopener noreferrer">OpenMBEE at INCOSE IW 2027<span class="note">Jan 30 – Feb 2</span></a></li>
+            <li><a href="https://forms.gle/thK285cZzCgFuwCV6" target="_blank" rel="noopener noreferrer">OpenMBEE at INCOSE IW 2027<span class="note">Sessions planned Jan 30 &amp; Feb 1 · IW runs Jan 30–Feb 2</span></a></li>
             <li><hr></li>
             <li><a href="https://forms.gle/PBHnLteSZcqWZSSEA" target="_blank" rel="noopener noreferrer">OpenMBEE Workshop at Caltech<span class="note">Feb 4 – 5</span></a></li>
             <li><a href="https://forms.gle/hupXadCrkBWYFYsJ6" target="_blank" rel="noopener noreferrer">JPL opening reception<span class="note">Feb 3 · JPL</span></a></li>
@@ -362,31 +359,6 @@
       <p>OpenMBEE is a community for Open Source Systems Engineering, a companion to the INCOSE community and the wider systems engineering profession.</p>
     </footer>
   </main>
-  <script>
-    (function () {
-      var header = document.querySelector('.site-header');
-      var toggle = header.querySelector('.nav-toggle');
-      var groups = header.querySelectorAll('.group-btn');
-      function closeGroups(except) {
-        groups.forEach(function (b) { if (b !== except) b.setAttribute('aria-expanded', 'false'); });
-      }
-      toggle.addEventListener('click', function () {
-        var open = header.classList.toggle('open');
-        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
-      groups.forEach(function (b) {
-        b.addEventListener('click', function (e) {
-          e.stopPropagation();
-          var open = b.getAttribute('aria-expanded') === 'true';
-          closeGroups(b);
-          b.setAttribute('aria-expanded', open ? 'false' : 'true');
-        });
-      });
-      document.addEventListener('click', function () { closeGroups(); });
-      document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') { closeGroups(); header.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); }
-      });
-    })();
-  </script>
+  <script src="navigation.js" defer></script>
 </body>
 </html>

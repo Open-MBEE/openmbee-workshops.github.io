@@ -4,7 +4,7 @@ Static HTML site for workshops.openmbee.org. No package dependencies are require
 
 ## Editing
 
-- `index.html`: event overview and registration guidance.
+- `index.html`: workshop series overview, program highlights, and the primary registration guide.
 - `iw-workshop.html`: OpenMBEE sessions at INCOSE IW.
 - `caltech-program.html`: generated Caltech workshop and JPL reception page.
 - `data/caltech-2027.json`: event, registration, speaker, venue, and session data.
@@ -13,9 +13,10 @@ Static HTML site for workshops.openmbee.org. No package dependencies are require
 - `event.css` and `event.js`: Caltech presentation and progressive day selection.
 - `sponsors.html`: supporting organizations.
 - `proposal.css`: shared presentation overrides.
+- `navigation.js`: shared desktop/mobile disclosures and keyboard handling.
 - `brand/`: existing brand assets.
 
-Registration links open external Google Forms; form settings and questions must be maintained separately. Keep navigation labels, dates, and registration destinations consistent across all pages.
+Registration links open external Google Forms; form settings and questions must be maintained separately. Keep navigation labels, dates, and registration destinations consistent across all pages. Check registration availability in each form before updating public status claims; the homepage directs visitors to the form for current availability.
 
 ## Review before publishing
 

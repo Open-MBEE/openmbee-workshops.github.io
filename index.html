@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>OpenMBEE Workshop 2027 — Registration and call for participation open</title>
-<meta name="description" content="Explore SysML v2 and open-source systems engineering at OpenMBEE Workshop 2027. February 4–5 at Caltech, with an opening reception February 3 at JPL.">
+<title>OpenMBEE Workshops 2027 · INCOSE IW and Caltech</title>
+<meta name="description" content="OpenMBEE Workshops 2027: working sessions at INCOSE IW in Torrance, a February 3 reception at JPL, and the February 4–5 Caltech workshop in Pasadena.">
 <link rel="icon" href="brand/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -327,21 +327,23 @@
     .menu { display: none; position: absolute; left: 0; right: 0; top: 100%; background: #10052F; border-bottom: 1px solid rgba(214,214,214,0.2); flex-direction: column; align-items: stretch; padding: 0.5rem 1rem 1rem; gap: 0; max-height: calc(100vh - 60px); overflow-y: auto; }
     .site-header.open .menu { display: flex; }
     .menu a, .menu .group-btn { padding: 0.85rem 0.6rem; width: 100%; }
-    .menu .group-btn { pointer-events: none; color: #C4C0D6; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; padding-bottom: 0.2rem; }
+    .menu .group-btn { color: #C4C0D6; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; padding-bottom: 0.2rem; }
     .menu .cta .group-btn { background: none; color: #64DDFA; }
     .menu .chev { display: none; }
-    .submenu, .group-btn[aria-expanded] + .submenu { display: block; position: static; background: none; border: 0; box-shadow: none; padding: 0 0 0.4rem 0.6rem; min-width: 0; }
+    .submenu, .group-btn[aria-expanded] + .submenu { display: none; position: static; background: none; border: 0; box-shadow: none; padding: 0 0 0.4rem 0.6rem; min-width: 0; }
     .menu a[aria-current="page"] { box-shadow: inset 3px 0 0 #64DDFA; border-radius: 0; }
   }
+  @media (max-width: 860px) { .menu .group-btn[aria-expanded="true"] + .submenu { display: block; } }
   .day-link { display: inline-flex; align-items: center; gap: 0.5em; margin-top: 1rem; padding: 0.75rem 1.15rem; font-size: 1rem; line-height: 1.2; background: var(--accent); color: var(--surface); border-radius: 6px; text-decoration: none; box-shadow: 0 1px 0 rgba(0,0,0,0.12); transition: filter .15s, transform .15s; }
   a.day-link:hover { filter: brightness(1.1); transform: translateY(-1px); }
   a.day-link:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+  .menu a.registration-nav { background: #64DDFA; color: #10052F; }
 </style>
 <link rel="stylesheet" href="proposal.css">
 </head>
 <body>
   <aside class="banner" aria-label="Announcement">
-    <p>Registration is open · OpenMBEE Workshop 2027</p>
+    <p>OpenMBEE Workshops 2027 · January 30–February 5</p>
   </aside>
   <header class="site-header" id="top">
     <div class="bar">
@@ -353,57 +355,43 @@
         <li><a href="caltech-program.html">Caltech Workshop</a></li>
         <li><a href="sponsors.html">Sponsors</a></li>
         <li><a href="https://github.com/Open-MBEE/openmbee-workshops.github.io/wiki" target="_blank" rel="noopener noreferrer">Workshop wiki</a></li>
-        <li><button class="group-btn" type="button" aria-expanded="false" aria-haspopup="true">Links <span class="chev" aria-hidden="true"></span></button>
-          <ul class="submenu">
-            <li><a href="https://openmbee.org" target="_blank" rel="noopener noreferrer">openmbee.org</a></li>
-            <li><a href="https://opensysml.org" target="_blank" rel="noopener noreferrer">opensysml.org</a></li>
-            <li><a href="https://www.incose.org/events-education/international-workshop/" target="_blank" rel="noopener noreferrer">INCOSE International Workshop</a></li>
-          </ul></li>
-        <li class="cta"><button class="group-btn" type="button" aria-expanded="false" aria-haspopup="true">Register <span class="chev" aria-hidden="true"></span></button>
-          <ul class="submenu">
-            <li><a href="https://forms.gle/thK285cZzCgFuwCV6" target="_blank" rel="noopener noreferrer">OpenMBEE at INCOSE IW 2027<span class="note">Jan 30 – Feb 2</span></a></li>
-            <li><hr></li>
-            <li><a href="https://forms.gle/PBHnLteSZcqWZSSEA" target="_blank" rel="noopener noreferrer">OpenMBEE Workshop at Caltech<span class="note">Feb 4 – 5</span></a></li>
-            <li><a href="https://forms.gle/hupXadCrkBWYFYsJ6" target="_blank" rel="noopener noreferrer">JPL opening reception<span class="note">Feb 3 · JPL</span></a></li>
-          </ul></li>
+
+        <li class="cta"><a class="registration-nav" href="#registration">Register</a></li>
       </ul>
     </div>
   </header>
   <main class="sheet">
-<header class="hero"><div class="hero-layout"><div>
-<p class="eyebrow">OpenMBEE Workshop 2027</p>
-<h1 class="event-name">Explore SysML v2 and open-source systems engineering</h1>
-<p class="lede">Talks, demonstrations, and modeling activities on SysML v2 and open-source systems engineering. Meet the developers and practitioners working on these tools.</p>
-<p class="hero-meta">February 4–5, 2027 · Caltech, Pasadena, California<br>Opening reception and keynote: February 3 at JPL</p>
-<div class="actions"><a class="button" href="https://forms.gle/PBHnLteSZcqWZSSEA" target="_blank" rel="noopener noreferrer">Register for Caltech</a><a class="button secondary" href="caltech-program.html">View the program</a></div>
-</div><div class="hero-art"><img class="hero-badge theme-light" src="brand/openmbee-workshop-2027-caltech-light.svg" alt="OpenMBEE Workshop 2027 at Caltech"><img class="hero-badge theme-dark" src="brand/openmbee-workshop-2027-caltech-dark.svg" alt="OpenMBEE Workshop 2027 at Caltech"></div></div></header>
+<header class="hero">
+<p class="eyebrow">January 30–February 5 · Southern California</p>
+<h1 class="event-name">OpenMBEE Workshops 2027</h1>
+<p class="series-theme">Leveraging Open Source in Systems Engineering</p>
+<p class="lede">Working sessions at INCOSE IW in Torrance, followed by talks, demos, and modeling at Caltech in Pasadena. The 2027 program focuses on SysML v2 and open-source systems engineering.</p>
+<div class="actions"><a class="button" href="#events">Compare the events</a><a href="#registration">Registration guide</a></div>
+</header>
 <section class="block" aria-labelledby="events">
-<p class="eyebrow">Plan your OpenMBEE visit · 2027</p>
 <h2 class="section-title" id="events">Where to join us</h2>
-<p class="intro-copy">Join OpenMBEE working sessions at INCOSE IW in Torrance, explore SysML v2 at the Caltech workshop in Pasadena, or take part in both. The Caltech workshop opens with a separately registered reception and keynote at JPL.</p>
 <div class="event-options">
-<article class="event-option"><p class="eyebrow">Working sessions · Torrance</p><h3>OpenMBEE at INCOSE IW</h3><p class="event-date">January 30 &amp; February 1</p><p>Work with the OpenMBEE community in collaborative sessions within the INCOSE International Workshop.</p><p class="detail">Sessions are currently planned for these two dates. INCOSE IW runs January 30–February 2 at the Torrance Marriott Redondo Beach.</p><a class="button secondary" href="https://forms.gle/thK285cZzCgFuwCV6" target="_blank" rel="noopener noreferrer">Sign up for IW sessions</a><p class="detail" style="margin-top:1rem"><a href="iw-workshop.html">View the IW sessions →</a></p></article>
-<article class="event-option"><p class="eyebrow">Talks, demos &amp; modeling · Pasadena</p><h3>OpenMBEE workshop at Caltech</h3><p class="event-date">February 4–5</p><p>Explore SysML v2 and open-source systems engineering with practitioners, researchers, and tool builders.</p><p class="detail">Talks, demonstrations, and participant-led modeling sessions. Newcomers and experienced practitioners are welcome.</p><a class="button" href="https://forms.gle/PBHnLteSZcqWZSSEA" target="_blank" rel="noopener noreferrer">Register for the Caltech workshop</a><p class="detail" style="margin-top:1rem"><a href="caltech-program.html">View the Caltech program →</a></p></article>
-</div>
-<article class="reception"><div><p class="eyebrow">Opening evening · JPL</p><h3>Reception &amp; opening keynote</h3><p>February 3 · Reception starts at 6:00 PM PST</p><p>Start the workshop with an evening gathering and an opening keynote from Nicholas LeGrand. Separate registration and advance visitor checking are required.</p></div><a class="button secondary" href="https://forms.gle/hupXadCrkBWYFYsJ6" target="_blank" rel="noopener noreferrer">Register for the JPL reception</a></article>
-<div class="signup-guide"><h2 class="section-title">What should I register for?</h2>
-<div class="guide-row"><p><strong>I want talks, demos, and modeling activities.</strong><br>Choose the February 4–5 Caltech workshop.</p><a href="https://forms.gle/PBHnLteSZcqWZSSEA" target="_blank" rel="noopener noreferrer">Caltech registration →</a></div>
-<div class="guide-row"><p><strong>I’m attending IW and want to join OpenMBEE sessions.</strong><br>Sign up for the planned January 30 and February 1 sessions.</p><a href="https://forms.gle/thK285cZzCgFuwCV6" target="_blank" rel="noopener noreferrer">IW session signup →</a></div>
-<div class="guide-row"><p><strong>I also want to join the opening evening at JPL.</strong><br>Complete the separate February 3 reception registration.</p><a href="https://forms.gle/hupXadCrkBWYFYsJ6" target="_blank" rel="noopener noreferrer">Reception registration →</a></div>
-<p class="all-events">Planning to attend everything? Complete all three signups.</p>
-</div>
-
-</section>
+<article class="event-option"><p class="eyebrow">Torrance · Working sessions</p><h3>OpenMBEE at INCOSE IW</h3><p class="event-date">January 30 &amp; February 1</p><p>Work with the OpenMBEE community in sessions within the INCOSE International Workshop.</p><p class="detail">These are the planned OpenMBEE session dates. The wider IW runs January 30–February 2 at the Torrance Marriott Redondo Beach.</p><a class="button secondary" href="iw-workshop.html">View IW sessions</a></article>
+<article class="event-option"><p class="eyebrow">Pasadena · Talks, demos &amp; modeling</p><h3>OpenMBEE at Caltech</h3><p class="event-date">February 4–5</p><p>Examine SysML v2 implementations, discuss modeling practices, and work on participant-led topics.</p><p class="detail">Keynotes, Open Space, a Fishbowl discussion, and hackathon activities. The detailed schedule is still being finalized.</p><a class="button secondary" href="caltech-program.html">View Caltech program</a><div class="opening-note"><h4>Opening reception at JPL · February 3</h4><p>Reception and keynote from Nicholas LeGrand, starting at 6:00 PM PST. Separate registration and advance visitor checking are required.</p></div></article>
+</div></section>
+<section class="block" aria-labelledby="highlights"><h2 class="section-title" id="highlights">Program highlights at Caltech</h2>
+<ul class="program-highlights">
+<li><span>Feb 3 · JPL</span><div><h3>Opening reception and keynote</h3><p>Nicholas LeGrand opens the workshop’s evening program.</p></div></li>
+<li><span>Feb 4 · Caltech</span><div><h3>SysML v2 implementation</h3><p>Ed Seidewitz on the story behind SysML v2’s open-source implementation, followed by Open Space and the hackathon kickoff.</p></div></li>
+<li><span>Feb 5 · Caltech</span><div><h3>Systems engineering leadership</h3><p>Adam Wade’s keynote, a Fishbowl discussion, and hackathon outbriefs.</p></div></li>
+</ul><a href="caltech-program.html#agenda">Browse the day-by-day agenda →</a></section>
 <section class="block" aria-labelledby="audience"><h2 class="section-title" id="audience">Who should attend</h2>
 <p class="intro-copy">The workshop is for systems engineers, researchers, students, and tool developers interested in SysML v2 and open-source tools. Both newcomers and experienced practitioners are welcome.</p>
 </section>
-<section class="block" aria-labelledby="speakers"><h2 class="section-title" id="speakers">Keynote speakers</h2>
-<div class="keynotes">
-<article class="keynote"><p class="keynote-date">Feb 3 · JPL reception</p><h3 class="keynote-name">Nicholas LeGrand</h3><p class="keynote-role">Opening keynote</p></article>
-<article class="keynote"><p class="keynote-date">Feb 4 · Caltech</p><h3 class="keynote-name">Ed Seidewitz</h3><p class="keynote-role">OMG SysML v2 co-lead · Model Driven Solutions</p><p>The story behind SysML v2’s open-source implementation.</p></article>
-<article class="keynote"><p class="keynote-date">Feb 5 · Caltech</p><h3 class="keynote-name">Adam Wade</h3><p class="keynote-role">Systems Engineering Technical Lead · Los Alamos National Labs</p><p>A keynote on systems-thinking leadership.</p></article>
-</div><a href="caltech-program.html">See keynote details and the workshop schedule →</a></section>
 
+
+<section class="block" aria-labelledby="registration"><h2 class="section-title" id="registration">What should I register for?</h2>
+<p class="intro-copy">Choose the activities you plan to attend. Each signup opens a separate Google Form; check the form for current availability and attendance requirements.</p>
+<div class="guide-row"><p><strong>Caltech workshop · February 4–5</strong><br>Talks, demos, and modeling activities in Pasadena.</p><a href="https://forms.gle/PBHnLteSZcqWZSSEA" target="_blank" rel="noopener noreferrer">Caltech registration →</a></div>
+<div class="guide-row"><p><strong>OpenMBEE at IW · January 30 &amp; February 1</strong><br>Sign up for the planned OpenMBEE working sessions in Torrance.</p><a href="https://forms.gle/thK285cZzCgFuwCV6" target="_blank" rel="noopener noreferrer">IW session signup →</a></div>
+<div class="guide-row"><p><strong>Opening reception at JPL · February 3</strong><br>If you plan to join the opening evening, register separately for visitor checking.</p><a href="https://forms.gle/hupXadCrkBWYFYsJ6" target="_blank" rel="noopener noreferrer">Reception registration →</a></div>
+<p class="all-events">To attend all activities, complete all three signups. Separate INCOSE registration requirements still need organizer confirmation.</p>
+</section>
 <section class="block" aria-labelledby="plan"><h2 class="section-title" id="plan">Before you register</h2>
 <details open><summary>Which dates and locations should I plan for?</summary><p>OpenMBEE sessions at INCOSE IW are currently planned for January 30 and February 1 in Torrance. The opening reception is February 3 at JPL, followed by the February 4–5 workshop at Caltech in Pasadena.</p></details>
 <details><summary>Do I need to register for the reception separately?</summary><p>Yes. Use the separate JPL reception form if you plan to attend. The form notes that advance visitor checking is required.</p></details>
@@ -413,31 +401,6 @@
 <section class="block"><h2 class="section-title">About OpenMBEE</h2><p class="intro-copy">OpenMBEE grew from work at ESO, JPL/NASA, and Boeing. Its mission is to build a community for open-source systems engineering, alongside INCOSE and the wider systems engineering profession.</p><a href="sponsors.html">Workshop sponsors →</a></section>
 <footer class="close"><p>OpenMBEE Workshop 2027</p><a href="caltech-program.html">View the Caltech program →</a></footer>
 </main>
-  <script>
-    (function () {
-      var header = document.querySelector('.site-header');
-      var toggle = header.querySelector('.nav-toggle');
-      var groups = header.querySelectorAll('.group-btn');
-      function closeGroups(except) {
-        groups.forEach(function (b) { if (b !== except) b.setAttribute('aria-expanded', 'false'); });
-      }
-      toggle.addEventListener('click', function () {
-        var open = header.classList.toggle('open');
-        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
-      groups.forEach(function (b) {
-        b.addEventListener('click', function (e) {
-          e.stopPropagation();
-          var open = b.getAttribute('aria-expanded') === 'true';
-          closeGroups(b);
-          b.setAttribute('aria-expanded', open ? 'false' : 'true');
-        });
-      });
-      document.addEventListener('click', function () { closeGroups(); });
-      document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') { closeGroups(); header.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); }
-      });
-    })();
-  </script>
+  <script src="navigation.js" defer></script>
 </body>
 </html>

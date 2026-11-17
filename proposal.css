@@ -36,3 +36,15 @@ footer.close p { font-size:.95rem; }
 .reception h3 {font-size:1.35rem;margin:.4rem 0 1rem;} .reception p {max-width:65ch;}
 .signup-guide {margin-top:2.5rem;} .guide-row {display:grid;grid-template-columns:1fr auto;gap:1.5rem;align-items:center;padding:1.2rem 0;border-bottom:1px solid var(--line-strong);} .guide-row p {margin:0;line-height:1.7;} .guide-row a {white-space:nowrap;} .all-events {margin:1.25rem 0 0;color:var(--accent);}
 @media(max-width:700px){.reception,.guide-row{grid-template-columns:1fr;gap:.75rem;}.reception .button{justify-self:start;}.guide-row a{white-space:normal;}}
+
+.series-theme {font-size:1.3rem;max-width:50ch;line-height:1.5;color:var(--accent);}
+.opening-note {margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--line-strong);}
+.opening-note h4 {font-size:1rem;margin:0 0 .75rem;line-height:1.5;}
+.opening-note p {font-size:.9rem;color:var(--muted);margin:0;}
+.program-highlights {list-style:none;padding:0;margin:1.5rem 0;}
+.program-highlights li {display:grid;grid-template-columns:10rem 1fr;gap:1.5rem;padding:1rem 0;}
+.program-highlights li>span {font-family:'IBM Plex Mono',monospace;font-size:.85rem;color:var(--muted);}
+.program-highlights h3 {font-size:1.2rem;line-height:1.4;margin:0 0 .5rem;}
+.program-highlights p {max-width:65ch;line-height:1.7;}
+#events,#registration {scroll-margin-top:6rem;}
+@media(max-width:600px){.program-highlights li{grid-template-columns:1fr;gap:.5rem;}}
