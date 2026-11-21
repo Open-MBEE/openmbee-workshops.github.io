@@ -1,0 +1,44 @@
+/* OpenMBEE brand guidelines: dark blue, light blue, grey and ABeeZee Regular. */
+:root {
+  color-scheme: dark;
+  --bg: #10052F;
+  --surface: #10052F;
+  --ink: #FFFFFF;
+  --muted: #D6D6D6;
+  --accent: #64DDFA;
+  --line: rgba(214, 214, 214, 0.12);
+  --line-strong: rgba(214, 214, 214, 0.34);
+}
+
+body { background-image: none; font-synthesis: none; }
+a { color: var(--accent); text-underline-offset: 0.2em; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+/* Keep the primary logo on its dark field with an unobstructed clear zone. */
+.site-header .bar { padding-top: 1.25rem; padding-bottom: 1.25rem; }
+.site-header .brand { display: block; flex: 0 0 auto; padding: 0.75rem; }
+.site-header .brand img { width: 140px; height: auto; }
+.hero-brand {
+  display: block;
+  width: min(100%, 460px);
+  padding: clamp(1.5rem, 6vw, 3rem);
+  margin: 0 0 2rem;
+  background: #10052F;
+}
+.hero-brand img { display: block; width: 100%; height: auto; }
+
+.headline-dates .cell { border-top: 4px solid var(--accent); }
+.callout { border-left-color: var(--accent); }
+.day-link { background: #64DDFA; color: #10052F; }
+.submenu { background: #10052F; }
+.submenu .note { color: #D6D6D6; }
+.menu .group-btn { font-weight: 400; }
+.label, .frame-tag, .keynote-date, .day-start { font-size: 0.875rem; }
+.event-name, h1.event-name { line-height: 1.35; }
+.registration-link { line-height: 1.5; }
+
+@media (max-width: 860px) {
+  .site-header .bar { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+  .menu { max-height: calc(100dvh - 90px); }
+  .menu .group-btn { color: #D6D6D6; }
+}
