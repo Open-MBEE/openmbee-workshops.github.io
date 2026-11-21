@@ -36,9 +36,12 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 .label, .frame-tag, .keynote-date, .day-start { font-size: 0.875rem; }
 .event-name, h1.event-name { line-height: 1.35; }
 .registration-link { line-height: 1.5; }
+.opening-evening { margin-top: 1rem; color: var(--muted); }
+.wiki-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
 
 @media (max-width: 860px) {
   .site-header .bar { padding-top: 0.5rem; padding-bottom: 0.5rem; }
   .menu { max-height: calc(100dvh - 90px); }
   .menu .group-btn { color: #D6D6D6; }
+  .menu .group-btn[aria-expanded="true"] + .submenu { display: block; }
 }
