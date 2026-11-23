@@ -259,7 +259,8 @@
   .banner p { margin: 0; color: inherit; }
   .banner a { color: inherit; text-underline-offset: 0.2em; }
   .banner a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
-  #participate { scroll-margin-top: 6rem; }
+  /* Leave room for the sticky header, including the logo clear zone. */
+  #participate, #registration-guide-heading { scroll-margin-top: 7rem; }
   .participation-link { color: var(--accent); text-underline-offset: 0.2em; }
   .participation-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
   /* Site menu */
