@@ -7,7 +7,7 @@ Static HTML for workshops.openmbee.org, published through this repository's GitH
 - `index.html`: workshop overview, event tiles with registration links, and brief keynote/activity highlights.
 - `iw-workshop.html`: IW overview, registration, brief session highlights, and links to the full IW wiki program.
 - `caltech-program.html`: Caltech and reception registration, keynote/activity highlights, and links to the full workshop wiki program.
-- `sponsors.html`: supporting organizations and their websites.
+- `sponsors.html`: workshop supporters, logos, and community categories awaiting announcements.
 - `brand/brand.css`: shared OpenMBEE brand styling; page layout styles also live in each HTML file.
 - `navigation.js`: shared desktop/mobile menus and keyboard interactions.
 - `brand/` and `OMBEE2027/`: logos and announcement artwork.
@@ -28,3 +28,7 @@ The opening reception is February 3 at JPL; the Caltech workshop is February 4�
 Run `node --test tests/navigation.test.cjs` and `git diff --check`. Check local links, registration destinations, desktop/mobile navigation, keyboard focus, and page layout before publishing. The navigation tests exercise behavior with a simulated DOM; they do not replace browser or accessibility review.
 
 Keep `CNAME`, `.nojekyll`, and the existing GitHub Pages configuration when publishing.
+
+## Sponsors and community
+
+`sponsors.html` is the single page for workshop support and community participation. It lists the five organizations carried over from the existing sponsors page, preserving the NumFOCUS sponsored-project note. Additional community categories say “To be announced” until participation is confirmed. Logo source URLs are recorded in `brand/partners/sources.json`.
